@@ -1,17 +1,10 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="pt-BR" data-auth="required">
-=======
-<html lang="pt-BR">
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <meta name="color-scheme" content="dark light">
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
     <title>Usuários | Painel Administrativo</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
 
@@ -20,7 +13,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-<<<<<<< HEAD
 
     <!-- Autenticação: carregada no <head> para validar a sessão antes de exibir a página -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
@@ -31,8 +23,6 @@
 
     <!-- Tema: no <head> para aplicar antes da primeira pintura (sem "flash") -->
     <script src="../assets/js/theme.js"></script>
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 </head>
 
 <body>
@@ -56,11 +46,7 @@
                 <a class="link active" href="usuarios.html">Usuários</a>
             </li>
             <li class="item">
-<<<<<<< HEAD
                 <a class="link" id="logout" href="login.html">Sair</a>
-=======
-                <a class="link" href="login.html">Sair</a>
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
             </li>
         </ul>
     </nav>
@@ -71,17 +57,11 @@
                 <h1>Usuários</h1>
                 <p>Controle quem tem acesso ao painel administrativo.</p>
             </div>
-<<<<<<< HEAD
             <button type="button" class="btn-cta" id="novo-usuario">Novo usuário</button>
         </div>
 
         <p class="feedback" id="usuario-feedback" role="status" aria-live="polite"></p>
 
-=======
-            <a class="btn-cta" href="#form-usuario">Novo usuário</a>
-        </div>
-
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
         <section class="admin-panel">
             <h2>Usuários cadastrados</h2>
 
@@ -96,7 +76,6 @@
                             <th>Ações</th>
                         </tr>
                     </thead>
-<<<<<<< HEAD
                     <tbody id="usuarios"></tbody>
                 </table>
             </div>
@@ -115,77 +94,23 @@
                         <input type="text" id="campo-nome-usuario" name="nome" placeholder="Ex: Ana Ribeiro"
                             maxlength="100" autocomplete="off" required />
                         <span class="error">O nome é obrigatório</span>
-=======
-                    <tbody>
-                        <tr>
-                            <td>Ana Ribeiro</td>
-                            <td>ana.ribeiro@fatec.sp.gov.br</td>
-                            <td><span class="badge badge-admin">Administrador</span></td>
-                            <td><span class="badge badge-active">Ativo</span></td>
-                            <td class="actions">
-                                <button type="button" class="btn-sm btn-edit">Editar</button>
-                                <button type="button" class="btn-sm btn-delete">Excluir</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Rafael Nunes</td>
-                            <td>rafael.nunes@fatec.sp.gov.br</td>
-                            <td><span class="badge badge-admin">Administrador</span></td>
-                            <td><span class="badge badge-active">Ativo</span></td>
-                            <td class="actions">
-                                <button type="button" class="btn-sm btn-edit">Editar</button>
-                                <button type="button" class="btn-sm btn-delete">Excluir</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Diretório Acadêmico</td>
-                            <td>diretorio@fatec.sp.gov.br</td>
-                            <td><span class="badge badge-user">Usuário</span></td>
-                            <td><span class="badge badge-inactive">Inativo</span></td>
-                            <td class="actions">
-                                <button type="button" class="btn-sm btn-edit">Editar</button>
-                                <button type="button" class="btn-sm btn-delete">Excluir</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <section class="admin-panel" id="form-usuario">
-            <h2>Novo usuário</h2>
-
-            <form class="admin-form" data-supabase-table="usuarios" novalidate>
-                <div class="form-row">
-                    <div class="form-field">
-                        <label for="campo-nome-usuario">Nome completo</label>
-                        <input type="text" id="campo-nome-usuario" name="nome" placeholder="Ex: Ana Ribeiro" />
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
 
                     <div class="form-field">
                         <label for="campo-email-usuario">E-mail</label>
-<<<<<<< HEAD
                         <input type="email" id="campo-email-usuario" name="email" placeholder="voce@fatec.sp.gov.br"
                             autocomplete="off" required />
                         <span class="error">O e-mail é obrigatório</span>
-=======
-                        <input type="email" id="campo-email-usuario" name="email" placeholder="voce@fatec.sp.gov.br" />
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-field">
                         <label for="campo-senha-usuario">Senha</label>
-<<<<<<< HEAD
                         <input type="password" id="campo-senha-usuario" name="senha" placeholder="Senha provisória"
                             autocomplete="new-password" minlength="8" aria-describedby="ajuda-senha" />
                         <small class="field-hint" id="ajuda-senha"></small>
                         <span class="error">A senha é obrigatória</span>
-=======
-                        <input type="password" id="campo-senha-usuario" name="senha" placeholder="Senha provisória" />
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
 
                     <div class="form-field">
@@ -194,10 +119,7 @@
                             <option value="administrador">Administrador</option>
                             <option value="usuario">Usuário</option>
                         </select>
-<<<<<<< HEAD
                         <span class="error">Selecione um papel</span>
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
 
                     <div class="form-field">
@@ -206,7 +128,6 @@
                             <option value="ativo">Ativo</option>
                             <option value="inativo">Inativo</option>
                         </select>
-<<<<<<< HEAD
                         <span class="error">Selecione um status</span>
                     </div>
                 </div>
@@ -217,21 +138,12 @@
                 </div>
             </form>
         </div>
-=======
-                    </div>
-                </div>
-
-                <button type="submit" class="call-to-action">Salvar usuário</button>
-            </form>
-        </section>
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
     </main>
 
     <footer class="footer">
         <p>© 2026 Eventos Fatec — Projeto de Desenvolvimento Web, 2º ciclo.</p>
     </footer>
 
-<<<<<<< HEAD
     <script src="../assets/js/utils/dom.js"></script>
     <script src="../assets/js/utils/modal.js"></script>
     <script src="../assets/js/utils/validation.js"></script>
@@ -240,11 +152,6 @@
     <script src="./js/pages/usuarios.js"></script>
     <script src="../assets/js/customSelect.js"></script>
     <script src="../assets/js/navShine.js"></script>
-=======
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
-    <!-- <script src="./js/supabaseClient.js"></script> -->
-    <!-- <script src="./js/usuarios.js"></script> -->
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 </body>
 
 </html>

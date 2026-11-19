@@ -1,17 +1,10 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="pt-BR" data-auth="required">
-=======
-<html lang="pt-BR">
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <meta name="color-scheme" content="dark light">
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
     <title>Eventos | Painel Administrativo</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
 
@@ -20,7 +13,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-<<<<<<< HEAD
 
     <!-- Autenticação: carregada no <head> para validar a sessão antes de exibir a página -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
@@ -31,8 +23,6 @@
 
     <!-- Tema: no <head> para aplicar antes da primeira pintura (sem "flash") -->
     <script src="../assets/js/theme.js"></script>
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 </head>
 
 <body>
@@ -56,11 +46,7 @@
                 <a class="link" href="usuarios.html">Usuários</a>
             </li>
             <li class="item">
-<<<<<<< HEAD
                 <a class="link" id="logout" href="login.html">Sair</a>
-=======
-                <a class="link" href="login.html">Sair</a>
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
             </li>
         </ul>
     </nav>
@@ -69,7 +55,6 @@
         <div class="admin-header">
             <div>
                 <h1>Eventos</h1>
-<<<<<<< HEAD
                 <p>Gerencie os eventos cadastrados.</p>
             </div>
             <button type="button" class="btn-cta" id="novo-evento">Novo evento</button>
@@ -77,13 +62,6 @@
 
         <p class="feedback" id="evento-feedback" role="status" aria-live="polite"></p>
 
-=======
-                <p>Gerencie os eventos cadastrados. Protótipo estático, sem integração ainda.</p>
-            </div>
-            <a class="btn-cta" href="#form-evento">Novo evento</a>
-        </div>
-
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
         <section class="admin-panel">
             <h2>Eventos cadastrados</h2>
 
@@ -99,18 +77,11 @@
                             <th>Ações</th>
                         </tr>
                     </thead>
-<<<<<<< HEAD
                     <tbody id="events"></tbody>
-=======
-                    <tbody id="events">
-
-                    </tbody>
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                 </table>
             </div>
         </section>
 
-<<<<<<< HEAD
         <!-- Formulário exibido dentro do modal (aberto por js/pages/eventos.js) -->
         <div hidden>
             <form class="admin-form" id="evento-form" novalidate>
@@ -120,47 +91,27 @@
                     <label for="campo-titulo">Nome do evento</label>
                     <input type="text" id="campo-titulo" name="titulo" placeholder="Ex: Curso de Banco de Dados" />
                     <span class="error">O nome é obrigatório</span>
-=======
-        <section class="admin-panel" id="form-evento">
-            <h2>Novo evento</h2>
-
-            <form class="admin-form" data-supabase-table="eventos" novalidate>
-                <div class="form-field">
-                    <label for="campo-titulo">Nome do evento</label>
-                    <input type="text" id="campo-titulo" name="titulo" placeholder="Ex: Curso de Banco de Dados" />
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                 </div>
 
                 <div class="form-row">
                     <div class="form-field">
                         <label for="campo-categoria">Categoria</label>
-<<<<<<< HEAD
                         <select id="campo-categoria" name="categoria" required>
                             <option value="" disabled selected>Carregando categorias...</option>
                         </select>
                         <span class="error">Selecione uma categoria</span>
-=======
-                        <select id="campo-categoria" name="categoria">
-                        </select>
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
 
                     <div class="form-field">
                         <label for="campo-data">Data</label>
                         <input type="date" id="campo-data" name="data" />
-<<<<<<< HEAD
                         <span class="error">A data é obrigatória</span>
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
 
                     <div class="form-field">
                         <label for="campo-horario">Horário</label>
                         <input type="text" id="campo-horario" name="horario" placeholder="Ex: 19h às 22h" />
-<<<<<<< HEAD
                         <span class="error">O horário é obrigatório</span>
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
                 </div>
 
@@ -168,29 +119,20 @@
                     <div class="form-field">
                         <label for="campo-local">Local</label>
                         <input type="text" id="campo-local" name="local" placeholder="Ex: Bloco C, sala 4" />
-<<<<<<< HEAD
                         <span class="error">O local é obrigatório</span>
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
 
                     <div class="form-field">
                         <label for="campo-endereco">Endereço completo</label>
                         <input type="text" id="campo-endereco" name="endereco"
                             placeholder="Ex: Campus Fatec São Paulo - Bloco C" />
-<<<<<<< HEAD
                         <span class="error">O endereço é obrigatório</span>
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
 
                     <div class="form-field">
                         <label for="campo-organizador">Organização</label>
                         <input type="text" id="campo-organizador" name="organizador" placeholder="Ex: Prof. Ana Ribeiro" />
-<<<<<<< HEAD
                         <span class="error">O organizador é obrigatório</span>
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
                 </div>
 
@@ -198,20 +140,14 @@
                     <div class="form-field">
                         <label for="campo-vagas-totais">Vagas totais</label>
                         <input type="number" id="campo-vagas-totais" name="vagas_totais" min="0" placeholder="Ex: 40" />
-<<<<<<< HEAD
                         <span class="error">Vagas totais é obrigatório</span>
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
 
                     <div class="form-field">
                         <label for="campo-vagas-restantes">Vagas restantes</label>
                         <input type="number" id="campo-vagas-restantes" name="vagas_restantes" min="0"
                             placeholder="Ex: 17" />
-<<<<<<< HEAD
                         <span class="error">Vagas restantes é obrigatório</span>
-=======
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     </div>
 
                     <div class="form-field">
@@ -227,7 +163,6 @@
                     <label for="campo-descricao">Descrição completa</label>
                     <textarea id="campo-descricao" name="descricao"
                         placeholder="Detalhes exibidos na página do evento"></textarea>
-<<<<<<< HEAD
                     <span class="error">Descrição completa é obrigatória</span>
                 </div>
 
@@ -237,20 +172,12 @@
                 </div>
             </form>
         </div>
-=======
-                </div>
-
-                <button type="submit" class="call-to-action">Salvar evento</button>
-            </form>
-        </section>
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
     </main>
 
     <footer class="footer">
         <p>© 2026 Eventos Fatec — Projeto de Desenvolvimento Web, 2º ciclo.</p>
     </footer>
 
-<<<<<<< HEAD
     <script src="../assets/js/utils/dom.js"></script>
     <script src="../assets/js/utils/modal.js"></script>
     <script src="../assets/js/utils/text.js"></script>
@@ -260,13 +187,6 @@
     <script src="./js/pages/eventos.js"></script>
     <script src="../assets/js/customSelect.js"></script>
     <script src="../assets/js/navShine.js"></script>
-=======
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="../supabase-credentials.js"></script>
-    <script src="./js/categorias.js"></script>
-    <script src="./js/supabaseClient.js"></script>
-    <script src="./js/eventos.js"></script>
->>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 </body>
 
 </html>
