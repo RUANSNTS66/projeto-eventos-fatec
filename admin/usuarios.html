@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-auth="required">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
+    <title>Usuários | Painel Administrativo</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Autenticação: carregada no <head> para validar a sessão antes de exibir a página -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
+    <script src="../supabase-credentials.js"></script>
+    <script src="../assets/js/supabaseClient.js"></script>
+    <script src="./js/services/authService.js"></script>
+    <script src="./js/guard.js"></script>
+
+    <!-- Tema: no <head> para aplicar antes da primeira pintura (sem "flash") -->
+    <script src="../assets/js/theme.js"></script>
+</head>
+
+<body>
+    <nav class="header-menu">
+        <img class="logo" alt="logotipo eventos fatec" title="Logotipo eventos fatec"
+            src="../assets/images/logotipo-eventos-fatec.png" />
+        <ul class="navigation">
+            <li class="item">
+                <a class="link" href="index.html">Painel</a>
+            </li>
+            <li class="item">
+                <a class="link" href="eventos.html">Eventos</a>
+            </li>
+            <li class="item">
+                <a class="link" href="categorias.html">Categorias</a>
+            </li>
+            <li class="item">
+                <a class="link" href="inscritos.html">Inscritos</a>
+            </li>
+            <li class="item">
+                <a class="link active" href="usuarios.html">Usuários</a>
+            </li>
+            <li class="item">
+                <a class="link" id="logout" href="login.html">Sair</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="admin">
+        <div class="admin-header">
+            <div>
+                <h1>Usuários</h1>
+                <p>Controle quem tem acesso ao painel administrativo.</p>
+            </div>
+            <button type="button" class="btn-cta" id="novo-usuario">Novo usuário</button>
+        </div>
+
+        <p class="feedback" id="usuario-feedback" role="status" aria-live="polite"></p>
+
+        <section class="admin-panel">
+            <h2>Usuários cadastrados</h2>
+
+            <div class="admin-table-wrap">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Papel</th>
+                            <th>Status</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usuarios"></tbody>
+                </table>
+            </div>
+
+            <div id="usuarios-paginacao"></div>
+        </section>
+
+        <!-- Formulário exibido dentro do modal (aberto por js/pages/usuarios.js) -->
+        <div hidden>
+            <form class="admin-form" id="usuario-form" novalidate>
+                <p class="feedback" id="usuario-form-feedback" role="alert"></p>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="campo-nome-usuario">Nome completo</label>
+                        <input type="text" id="campo-nome-usuario" name="nome" placeholder="Ex: Ana Ribeiro"
+                            maxlength="100" autocomplete="off" required />
+                        <span class="error">O nome é obrigatório</span>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="campo-email-usuario">E-mail</label>
+                        <input type="email" id="campo-email-usuario" name="email" placeholder="voce@fatec.sp.gov.br"
+                            autocomplete="off" required />
+                        <span class="error">O e-mail é obrigatório</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="campo-senha-usuario">Senha</label>
+                        <input type="password" id="campo-senha-usuario" name="senha" placeholder="Senha provisória"
+                            autocomplete="new-password" minlength="8" aria-describedby="ajuda-senha" />
+                        <small class="field-hint" id="ajuda-senha"></small>
+                        <span class="error">A senha é obrigatória</span>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="campo-papel-usuario">Papel</label>
+                        <select id="campo-papel-usuario" name="papel">
+                            <option value="administrador">Administrador</option>
+                            <option value="usuario">Usuário</option>
+                        </select>
+                        <span class="error">Selecione um papel</span>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="campo-status-usuario">Status</label>
+                        <select id="campo-status-usuario" name="status">
+                            <option value="ativo">Ativo</option>
+                            <option value="inativo">Inativo</option>
+                        </select>
+                        <span class="error">Selecione um status</span>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-ghost" data-modal-close>Cancelar</button>
+                    <button type="submit" id="salvar-usuario" class="call-to-action">Salvar usuário</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Eventos Fatec — Projeto de Desenvolvimento Web, 2º ciclo.</p>
+    </footer>
+
+    <script src="../assets/js/utils/dom.js"></script>
+    <script src="../assets/js/utils/modal.js"></script>
+    <script src="../assets/js/utils/validation.js"></script>
+    <script src="../assets/js/utils/pagination.js"></script>
+    <script src="./js/services/usuariosService.js"></script>
+    <script src="./js/pages/usuarios.js"></script>
+    <script src="../assets/js/customSelect.js"></script>
+    <script src="../assets/js/navShine.js"></script>
+</body>
+
+</html>
