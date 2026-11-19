@@ -1,10 +1,17 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="pt-BR" data-auth="required">
+=======
+<html lang="pt-BR">
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <meta name="color-scheme" content="dark light">
+=======
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
     <title>Inscritos | Painel Administrativo</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
 
@@ -13,6 +20,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+<<<<<<< HEAD
 
     <!-- Autenticação: carregada no <head> para validar a sessão antes de exibir a página -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
@@ -23,6 +31,8 @@
 
     <!-- Tema: no <head> para aplicar antes da primeira pintura (sem "flash") -->
     <script src="../assets/js/theme.js"></script>
+=======
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 </head>
 
 <body>
@@ -46,7 +56,11 @@
                 <a class="link" href="usuarios.html">Usuários</a>
             </li>
             <li class="item">
+<<<<<<< HEAD
                 <a class="link" id="logout" href="login.html">Sair</a>
+=======
+                <a class="link" href="login.html">Sair</a>
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
             </li>
         </ul>
     </nav>
@@ -55,12 +69,19 @@
         <div class="admin-header">
             <div>
                 <h1>Inscritos</h1>
+<<<<<<< HEAD
                 <p>Veja quem se inscreveu em cada evento.</p>
             </div>
         </div>
 
         <p class="feedback" id="inscritos-feedback" role="status" aria-live="polite"></p>
 
+=======
+                <p>Veja quem se inscreveu em cada evento. Protótipo estático, sem integração ainda.</p>
+            </div>
+        </div>
+
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
         <section class="admin-panel">
             <h2>Inscrições cadastradas</h2>
 
@@ -68,15 +89,29 @@
                 <label for="filtro-evento">Evento</label>
                 <select id="filtro-evento">
                     <option value="">Todos os eventos</option>
+<<<<<<< HEAD
+=======
+                    <option value="workshop-1">HTML do Zero ao Avançado</option>
+                    <option value="palestra-1">Carreira em Tecnologia: por onde começar</option>
+                    <option value="hackathon-1">Hackathon Fatec 24h</option>
+                    <option value="meetup-2">Meetup UX &amp; Produto</option>
+                    <option value="curso-1">Curso de JavaScript Moderno</option>
+                    <option value="show-1">Show de Encerramento do Semestre</option>
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                 </select>
             </div>
 
             <div class="admin-table-wrap">
+<<<<<<< HEAD
                 <table class="admin-table">
+=======
+                <table class="admin-table" data-supabase-table="inscricoes">
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                     <thead>
                         <tr>
                             <th>Nome</th>
                             <th>E-mail</th>
+<<<<<<< HEAD
                             <th>WhatsApp</th>
                             <th>Evento</th>
                             <th>Inscrito em</th>
@@ -88,6 +123,98 @@
             </div>
 
             <div id="inscritos-paginacao"></div>
+=======
+                            <th>Evento</th>
+                            <th>Inscrito em</th>
+                            <th>Código</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-evento="workshop-1">
+                            <td>Beatriz Souza</td>
+                            <td>beatriz.souza@aluno.fatec.sp.gov.br</td>
+                            <td>HTML do Zero ao Avançado</td>
+                            <td>02/09/2026 14:32</td>
+                            <td>INSC-7F3K2A</td>
+                            <td class="actions">
+                                <button type="button" class="btn-sm btn-delete">Remover</button>
+                            </td>
+                        </tr>
+                        <tr data-evento="workshop-1">
+                            <td>Lucas Almeida</td>
+                            <td>lucas.almeida@aluno.fatec.sp.gov.br</td>
+                            <td>HTML do Zero ao Avançado</td>
+                            <td>03/09/2026 09:10</td>
+                            <td>INSC-9D1Q7Z</td>
+                            <td class="actions">
+                                <button type="button" class="btn-sm btn-delete">Remover</button>
+                            </td>
+                        </tr>
+                        <tr data-evento="palestra-1">
+                            <td>Marina Costa</td>
+                            <td>marina.costa@aluno.fatec.sp.gov.br</td>
+                            <td>Carreira em Tecnologia: por onde começar</td>
+                            <td>05/09/2026 18:45</td>
+                            <td>INSC-2M8T4X</td>
+                            <td class="actions">
+                                <button type="button" class="btn-sm btn-delete">Remover</button>
+                            </td>
+                        </tr>
+                        <tr data-evento="hackathon-1">
+                            <td>Pedro Henrique</td>
+                            <td>pedro.henrique@aluno.fatec.sp.gov.br</td>
+                            <td>Hackathon Fatec 24h</td>
+                            <td>20/09/2026 11:02</td>
+                            <td>INSC-5R6L9B</td>
+                            <td class="actions">
+                                <button type="button" class="btn-sm btn-delete">Remover</button>
+                            </td>
+                        </tr>
+                        <tr data-evento="meetup-2">
+                            <td>Camila Ferreira</td>
+                            <td>camila.ferreira@aluno.fatec.sp.gov.br</td>
+                            <td>Meetup UX &amp; Produto</td>
+                            <td>28/09/2026 20:15</td>
+                            <td>INSC-1P4N8C</td>
+                            <td class="actions">
+                                <button type="button" class="btn-sm btn-delete">Remover</button>
+                            </td>
+                        </tr>
+                        <tr data-evento="meetup-2">
+                            <td>João Vitor</td>
+                            <td>joao.vitor@aluno.fatec.sp.gov.br</td>
+                            <td>Meetup UX &amp; Produto</td>
+                            <td>29/09/2026 16:50</td>
+                            <td>INSC-6H2W3E</td>
+                            <td class="actions">
+                                <button type="button" class="btn-sm btn-delete">Remover</button>
+                            </td>
+                        </tr>
+                        <tr data-evento="curso-1">
+                            <td>Sophia Lima</td>
+                            <td>sophia.lima@aluno.fatec.sp.gov.br</td>
+                            <td>Curso de JavaScript Moderno</td>
+                            <td>01/10/2026 13:20</td>
+                            <td>INSC-8K5Y1V</td>
+                            <td class="actions">
+                                <button type="button" class="btn-sm btn-delete">Remover</button>
+                            </td>
+                        </tr>
+                        <tr data-evento="show-1">
+                            <td>Gabriel Santos</td>
+                            <td>gabriel.santos@aluno.fatec.sp.gov.br</td>
+                            <td>Show de Encerramento do Semestre</td>
+                            <td>10/10/2026 10:05</td>
+                            <td>INSC-3T7J6U</td>
+                            <td class="actions">
+                                <button type="button" class="btn-sm btn-delete">Remover</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
         </section>
     </main>
 
@@ -95,6 +222,7 @@
         <p>© 2026 Eventos Fatec — Projeto de Desenvolvimento Web, 2º ciclo.</p>
     </footer>
 
+<<<<<<< HEAD
     <script src="../assets/js/utils/dom.js"></script>
     <script src="../assets/js/utils/modal.js"></script>
     <script src="../assets/js/utils/text.js"></script>
@@ -104,6 +232,11 @@
     <script src="./js/pages/inscritos.js"></script>
     <script src="../assets/js/customSelect.js"></script>
     <script src="../assets/js/navShine.js"></script>
+=======
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
+    <!-- <script src="./js/supabaseClient.js"></script> -->
+    <!-- <script src="./js/inscritos.js"></script> -->
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 </body>
 
 </html>

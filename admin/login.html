@@ -1,10 +1,17 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="pt-BR" data-auth="guest">
+=======
+<html lang="pt-BR">
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <meta name="color-scheme" content="dark light">
+=======
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
     <title>Entrar | Painel Administrativo</title>
     <link rel="stylesheet" href="../assets/css/styles.css">
 
@@ -13,9 +20,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
+<<<<<<< HEAD
 
     <!-- Tema: no <head> para aplicar antes da primeira pintura (sem "flash") -->
     <script src="../assets/js/theme.js"></script>
+=======
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 </head>
 
 <body>
@@ -34,6 +44,7 @@
         <p>Acesso restrito à equipe organizadora dos eventos.</p>
 
         <div class="admin-panel">
+<<<<<<< HEAD
             <p class="feedback" id="login-feedback" role="alert" aria-live="assertive"></p>
 
             <form class="admin-form" id="form-login" novalidate>
@@ -42,13 +53,24 @@
                     <input type="email" id="campo-email" name="email" placeholder="voce@fatec.sp.gov.br"
                         autocomplete="username" required />
                     <span class="error">Informe o e-mail.</span>
+=======
+            <form class="admin-form" id="form-login" data-supabase-auth="signInWithPassword" novalidate>
+                <div class="form-field">
+                    <label for="campo-email">E-mail</label>
+                    <input type="email" id="campo-email" name="email" placeholder="voce@fatec.sp.gov.br"
+                        autocomplete="username" />
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                 </div>
 
                 <div class="form-field">
                     <label for="campo-senha">Senha</label>
                     <input type="password" id="campo-senha" name="senha" placeholder="Sua senha"
+<<<<<<< HEAD
                         autocomplete="current-password" required />
                     <span class="error">Informe a senha.</span>
+=======
+                        autocomplete="current-password" />
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
                 </div>
 
                 <button type="submit" class="call-to-action">Entrar</button>
@@ -60,6 +82,7 @@
         <p>© 2026 Eventos Fatec — Projeto de Desenvolvimento Web, 2º ciclo.</p>
     </footer>
 
+<<<<<<< HEAD
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.min.js"></script>
     <script src="../supabase-credentials.js"></script>
     <script src="../assets/js/supabaseClient.js"></script>
@@ -67,6 +90,11 @@
     <script src="../assets/js/utils/dom.js"></script>
     <script src="./js/pages/login.js"></script>
     <script src="../assets/js/navShine.js"></script>
+=======
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
+    <!-- <script src="./js/supabaseClient.js"></script> -->
+    <!-- <script src="./js/auth.js"></script> -->
+>>>>>>> 0048ea875695479064ec592e92d13e121b3f9c7c
 </body>
 
 </html>
