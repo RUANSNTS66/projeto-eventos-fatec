@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Tema: no <head> para aplicar antes da primeira pintura (sem "flash") -->
@@ -22,107 +22,120 @@
 <body class="site">
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <nav class="header-menu" aria-label="Principal">
-        <a href="index.html" class="brand">
-            <img class="logo" alt="Eventos Fatec — início" src="./assets/images/logotipo-eventos-fatec.png" />
-        </a>
-        <ul class="navigation">
-            <li class="item">
-                <a class="link" href="index.html">Início</a>
-            </li>
-            <li class="item">
-                <a class="link" href="index.html#eventos">Eventos</a>
-            </li>
-            <li class="item">
-                <a class="link" href="index.html#categorias">Categorias</a>
-            </li>
-            <li class="item">
-                <a class="call-to-action" href="index.html#eventos">Explorar eventos</a>
-            </li>
-        </ul>
-    </nav>
+    <header class="masthead">
+        <div class="masthead-inner">
+            <a href="index.html" class="brand" aria-label="Eventos Fatec — início">
+                <img class="logo" alt="Eventos Fatec" src="./assets/images/logotipo-eventos-fatec.png" />
+            </a>
+
+            <div class="masthead-side">
+                <nav class="header-menu" aria-label="Principal">
+                    <ul class="navigation">
+                        <li class="item">
+                            <a class="link" href="index.html">Início</a>
+                        </li>
+                        <li class="item">
+                            <a class="link active" href="index.html#eventos" aria-current="page">Eventos</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="index.html#categorias">Categorias</a>
+                        </li>
+                        <li class="item">
+                            <a class="call-to-action" href="index.html#eventos">Explorar eventos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
     <main id="conteudo" class="subscription">
-        <nav class="breadcrumb" aria-label="Você está em">
-            <a href="index.html">Eventos</a>
-            <span aria-hidden="true">/</span>
-            <a id="breadcrumb-evento" href="index.html">Evento</a>
-            <span aria-hidden="true">/</span>
-            <span aria-current="page">Inscrição</span>
-        </nav>
+        <div class="page-shell">
+            <nav class="breadcrumb" aria-label="Você está em">
+                <a href="index.html">Eventos</a>
+                <span aria-hidden="true">/</span>
+                <a id="breadcrumb-evento" href="index.html">Evento</a>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">Inscrição</span>
+            </nav>
 
-        <div id="inscricao-carregando" class="detail-skeleton detail-skeleton--compact" aria-hidden="true">
-            <span class="sk-line"></span>
-            <span class="sk-line sk-line--short"></span>
-        </div>
-
-        <div id="inscricao-vazio" class="empty-state" hidden>
-            <p class="empty-state-title" id="inscricao-vazio-titulo">Nenhum evento selecionado</p>
-            <p id="inscricao-vazio-texto">Escolha um evento para se inscrever.</p>
-            <a class="btn-cta" href="index.html#eventos">Ver eventos</a>
-        </div>
-
-        <div id="inscricao-conteudo" class="subscription-content" hidden>
-            <aside class="subscription-summary" id="resumo-evento" data-reveal></aside>
-
-            <form class="subscription-form" id="form-inscricao" novalidate data-reveal>
-                <div class="subscription-form-header">
-                    <h1 class="title">Garanta sua vaga</h1>
-                    <p>Preencha seus dados. Leva menos de um minuto.</p>
-                </div>
-
-                <p class="feedback" id="inscricao-feedback" role="alert" aria-live="assertive"></p>
-
-                <div class="form-field">
-                    <label for="campo-nome">Nome completo</label>
-                    <input type="text" id="campo-nome" name="nome" placeholder="Como no seu documento"
-                        autocomplete="name" maxlength="120" required />
-                    <span class="error">Informe seu nome completo.</span>
-                </div>
-
-                <div class="form-field">
-                    <label for="campo-email">E-mail</label>
-                    <input type="email" id="campo-email" name="email" placeholder="voce@email.com"
-                        autocomplete="email" maxlength="254" required />
-                    <span class="error">Informe um e-mail válido.</span>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-field">
-                        <label for="campo-documento">CPF</label>
-                        <input type="text" id="campo-documento" name="documento" placeholder="000.000.000-00"
-                            inputmode="numeric" autocomplete="off" maxlength="14" required />
-                        <span class="error">Informe um CPF válido.</span>
-                    </div>
-
-                    <div class="form-field">
-                        <label for="campo-nascimento">Data de nascimento</label>
-                        <input type="date" id="campo-nascimento" name="data_nascimento" autocomplete="bday" required />
-                        <span class="error">Informe sua data de nascimento.</span>
-                    </div>
-                </div>
-
-                <div class="form-field">
-                    <label for="campo-whatsapp">WhatsApp</label>
-                    <input type="tel" id="campo-whatsapp" name="whatsapp" placeholder="(15) 99999-9999"
-                        inputmode="tel" autocomplete="tel-national" maxlength="15" required />
-                    <span class="error">Informe um WhatsApp válido com DDD.</span>
-                </div>
-
-                <p class="privacy-note">Seus dados são usados apenas pela organização deste evento.</p>
-
-                <button type="submit" class="call-to-action" id="botao-inscrever">Confirmar inscrição</button>
-            </form>
-        </div>
-
-        <!-- Conteúdo do modal de confirmação (clonado por js/pages/inscricao.js) -->
-        <template id="tpl-confirmacao">
-            <div class="confirmation">
-                <p>Guarde seu código de confirmação:</p>
-                <strong class="confirmation-code" data-slot="codigo"></strong>
-                <p class="confirmation-event" data-slot="evento"></p>
+            <div id="inscricao-carregando" class="detail-skeleton detail-skeleton--compact" aria-hidden="true">
+                <span class="sk-line"></span>
+                <span class="sk-line sk-line--short"></span>
             </div>
-        </template>
+
+            <div id="inscricao-vazio" class="empty-state" hidden>
+                <p class="empty-state-title" id="inscricao-vazio-titulo">Nenhum evento selecionado</p>
+                <p id="inscricao-vazio-texto">Escolha um evento para se inscrever.</p>
+                <a class="btn-cta" href="index.html#eventos">Ver eventos</a>
+            </div>
+
+            <div id="inscricao-conteudo" class="subscription-content" hidden>
+                <aside class="subscription-summary" id="resumo-evento" data-reveal></aside>
+
+                <form class="subscription-form" id="form-inscricao" novalidate data-reveal>
+                    <div class="form-steps" aria-hidden="true">
+                        <span>Evento escolhido</span><i></i><span>Seus dados</span>
+                    </div>
+
+                    <div class="subscription-form-header">
+                        <h1 class="title">Garanta sua vaga</h1>
+                        <p>Preencha seus dados. Leva menos de um minuto.</p>
+                    </div>
+
+                    <p class="feedback" id="inscricao-feedback" role="alert" aria-live="assertive"></p>
+
+                    <div class="form-field">
+                        <label for="campo-nome">Nome completo</label>
+                        <input type="text" id="campo-nome" name="nome" placeholder="Como no seu documento"
+                            autocomplete="name" maxlength="120" required />
+                        <span class="error">Informe seu nome completo.</span>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="campo-email">E-mail</label>
+                        <input type="email" id="campo-email" name="email" placeholder="voce@email.com"
+                            autocomplete="email" maxlength="254" required />
+                        <span class="error">Informe um e-mail válido.</span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="campo-documento">CPF</label>
+                            <input type="text" id="campo-documento" name="documento" placeholder="000.000.000-00"
+                                inputmode="numeric" autocomplete="off" maxlength="14" required />
+                            <span class="error">Informe um CPF válido.</span>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="campo-nascimento">Data de nascimento</label>
+                            <input type="date" id="campo-nascimento" name="data_nascimento" autocomplete="bday" required />
+                            <span class="error">Informe sua data de nascimento.</span>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="campo-whatsapp">WhatsApp</label>
+                        <input type="tel" id="campo-whatsapp" name="whatsapp" placeholder="(15) 99999-9999"
+                            inputmode="tel" autocomplete="tel-national" maxlength="15" required />
+                        <span class="error">Informe um WhatsApp válido com DDD.</span>
+                    </div>
+
+                    <p class="privacy-note">Seus dados são usados apenas pela organização deste evento.</p>
+
+                    <button type="submit" class="call-to-action" id="botao-inscrever">Confirmar inscrição</button>
+                </form>
+            </div>
+
+            <!-- Conteúdo do modal de confirmação (clonado por js/pages/inscricao.js) -->
+            <template id="tpl-confirmacao">
+                <div class="confirmation">
+                    <p>Guarde seu código de confirmação:</p>
+                    <strong class="confirmation-code" data-slot="codigo"></strong>
+                    <p class="confirmation-event" data-slot="evento"></p>
+                </div>
+            </template>
+        </div>
     </main>
 
     <footer class="footer">

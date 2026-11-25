@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Tema: no <head> para aplicar antes da primeira pintura (sem "flash") -->
@@ -22,107 +22,163 @@
 <body class="site">
     <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-    <nav class="header-menu" aria-label="Principal">
-        <a href="index.html" class="brand">
-            <img class="logo" alt="Eventos Fatec — início" src="./assets/images/logotipo-eventos-fatec.png" />
-        </a>
-        <ul class="navigation">
-            <li class="item">
-                <a class="link active" href="index.html" aria-current="page">Início</a>
-            </li>
-            <li class="item">
-                <a class="link" href="index.html#eventos">Eventos</a>
-            </li>
-            <li class="item">
-                <a class="link" href="index.html#categorias">Categorias</a>
-            </li>
-            <li class="item">
-                <a class="call-to-action" href="index.html#eventos">Explorar eventos</a>
-            </li>
-        </ul>
-    </nav>
+    <header class="masthead">
+        <div class="masthead-inner">
+            <a href="index.html" class="brand" aria-label="Eventos Fatec — início">
+                <img class="logo" alt="Eventos Fatec" src="./assets/images/logotipo-eventos-fatec.png" />
+            </a>
 
-    <header class="hero">
-        <div class="hero-aurora" aria-hidden="true">
-            <span class="blob blob-1"></span>
-            <span class="blob blob-2"></span>
-            <span class="blob blob-3"></span>
-            <span class="hero-grid"></span>
-        </div>
+            <div class="masthead-side">
+                <span class="system-status" aria-hidden="true">Agenda ativa</span>
 
-        <div class="hero-content">
-            <p class="eyebrow" data-reveal>Agenda oficial · Fatec</p>
-            <h1 class="title" data-reveal><span class="sr-only">Onde sua turma encontra o próximo evento</span><span id="scramble-text-1" aria-hidden="true">Onde sua turma</span> <span class="highlight"><span id="scramble-text-2" aria-hidden="true">encontra o próximo evento</span></span><span class="scramble-caret" aria-hidden="true"></span></h1>
-            <p class="description" data-reveal>Workshops, palestras, hackathons e muito mais. Encontre o seu e garanta a vaga em poucos cliques.</p>
+                <nav class="header-menu" aria-label="Principal">
+                    <ul class="navigation">
+                        <li class="item">
+                            <a class="link active" href="index.html" aria-current="page">Início</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="index.html#eventos">Eventos</a>
+                        </li>
+                        <li class="item">
+                            <a class="link" href="index.html#categorias">Categorias</a>
+                        </li>
+                        <li class="item">
+                            <a class="call-to-action" href="index.html#eventos">Explorar eventos</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
     <main id="conteudo">
-        <form class="search-panel" id="form-busca" role="search" aria-label="Buscar eventos" data-reveal="scale">
-            <label class="search-field">
-                <span class="search-icon search-icon--primary" data-icon="search"></span>
-                <span class="search-text">
-                    <span class="search-label">Evento</span>
-                    <input type="search" id="busca-eventos" name="q" placeholder="Buscar por nome..." autocomplete="off" />
-                </span>
-            </label>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-aurora" aria-hidden="true">
+                <span class="hero-grid"></span>
+            </div>
 
-            <label class="search-field">
-                <span class="search-icon search-icon--secondary" data-icon="calendar"></span>
-                <span class="search-text">
-                    <span class="search-label">Quando</span>
-                    <select id="filtro-periodo" name="quando">
-                        <option value="proximos">Próximos eventos</option>
-                        <option value="mes">Este mês</option>
-                        <option value="todos">Todas as datas</option>
-                        <option value="encerrados">Já encerrados</option>
-                    </select>
-                </span>
-            </label>
+            <div class="hero-inner">
+                <div class="hero-copy" data-reveal>
+                    <p class="eyebrow">Agenda oficial · Fatec</p>
+                    <h1 class="title" id="hero-title"><span class="sr-only">Onde sua turma encontra o próximo evento</span><span id="scramble-text-1" aria-hidden="true">Onde sua turma</span> <span class="highlight"><span id="scramble-text-2" aria-hidden="true">encontra o próximo evento</span></span><span class="scramble-caret" aria-hidden="true"></span></h1>
+                    <p class="description">Workshops, palestras, hackathons e muito mais. Encontre o seu e garanta a vaga em poucos cliques.</p>
 
-            <label class="search-field">
-                <span class="search-icon search-icon--tertiary" data-icon="grid"></span>
-                <span class="search-text">
-                    <span class="search-label">Categoria</span>
-                    <select id="filtro-categoria" name="categoria">
-                        <option value="">Todas</option>
-                    </select>
-                </span>
-            </label>
+                    <div class="hero-actions">
+                        <a class="btn-cta" href="#eventos">Ver programação <span data-icon="arrow"></span></a>
+                        <a class="hero-textlink" href="#destaques">Ver destaques <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
 
-            <button type="submit" class="search-submit">
-                <span data-icon="search"></span>
-                Buscar
-            </button>
-        </form>
-
-        <section class="section" id="destaques" aria-labelledby="titulo-destaques">
-            <div class="section-header" data-reveal>
-                <h2 class="section-title" id="titulo-destaques">Em <span class="highlight">destaque</span></h2>
-                <div class="carousel-controls">
-                    <button type="button" class="round-button" id="carrossel-anterior" aria-label="Destaques anteriores">
-                        <span class="flip" data-icon="arrow"></span>
-                    </button>
-                    <button type="button" class="round-button" id="carrossel-proximo" aria-label="Próximos destaques">
-                        <span data-icon="arrow"></span>
-                    </button>
+                <div class="hero-visual" aria-hidden="true" data-reveal="scale">
+                    <span class="orbit orbit--outer"></span>
+                    <span class="orbit orbit--middle"></span>
+                    <span class="orbit orbit--inner"></span>
+                    <span class="core"></span>
+                    <div class="signal-card signal-card--top">
+                        <small>Agenda</small>
+                        <strong>FATEC / 2026</strong>
+                    </div>
+                    <div class="signal-card signal-card--bottom">
+                        <small>Inscrições</small>
+                        <strong>Aberta a todos</strong>
+                    </div>
                 </div>
             </div>
 
-            <div class="carousel" id="carrossel-destaques" tabindex="0" aria-label="Eventos em destaque"></div>
+            <form class="search-panel" id="form-busca" role="search" aria-label="Buscar eventos" data-reveal="scale">
+                <label class="search-field">
+                    <span class="search-icon search-icon--primary" data-icon="search"></span>
+                    <span class="search-text">
+                        <span class="search-label">Evento</span>
+                        <input type="search" id="busca-eventos" name="q" placeholder="Buscar por nome..." autocomplete="off" />
+                    </span>
+                </label>
+
+                <label class="search-field">
+                    <span class="search-icon search-icon--secondary" data-icon="calendar"></span>
+                    <span class="search-text">
+                        <span class="search-label">Quando</span>
+                        <select id="filtro-periodo" name="quando">
+                            <option value="proximos">Próximos eventos</option>
+                            <option value="mes">Este mês</option>
+                            <option value="todos">Todas as datas</option>
+                            <option value="encerrados">Já encerrados</option>
+                        </select>
+                    </span>
+                </label>
+
+                <label class="search-field">
+                    <span class="search-icon search-icon--tertiary" data-icon="grid"></span>
+                    <span class="search-text">
+                        <span class="search-label">Categoria</span>
+                        <select id="filtro-categoria" name="categoria">
+                            <option value="">Todas</option>
+                        </select>
+                    </span>
+                </label>
+
+                <button type="submit" class="search-submit">
+                    <span data-icon="search"></span>
+                    Buscar
+                </button>
+            </form>
         </section>
 
-        <section class="section" id="eventos" aria-labelledby="titulo-eventos">
-            <div class="section-header" data-reveal>
-                <h2 class="section-title" id="titulo-eventos">Todos os <span class="highlight">eventos</span></h2>
-                <p class="results-count" id="contador-eventos" aria-live="polite"></p>
+        <section class="section section--featured" id="destaques" aria-labelledby="titulo-destaques">
+            <div class="section-inner">
+                <div class="section-header" data-reveal>
+                    <div class="section-heading">
+                        <span class="section-index">01 / Em pauta</span>
+                        <h2 class="section-title" id="titulo-destaques">Em <span class="highlight">destaque</span></h2>
+                    </div>
+                    <div class="carousel-controls">
+                        <button type="button" class="round-button" id="carrossel-anterior" aria-label="Destaques anteriores">
+                            <span class="flip" data-icon="arrow"></span>
+                        </button>
+                        <button type="button" class="round-button" id="carrossel-proximo" aria-label="Próximos destaques">
+                            <span data-icon="arrow"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="carousel" id="carrossel-destaques" tabindex="0" aria-label="Eventos em destaque"></div>
             </div>
+        </section>
 
-            <nav class="filter" id="categorias" aria-label="Filtrar por categoria">
-                <ul class="filter-list" id="lista-categorias"></ul>
-            </nav>
+        <section class="section section--catalog" id="eventos" aria-labelledby="titulo-eventos">
+            <div class="section-inner">
+                <div class="section-header" data-reveal>
+                    <div class="section-heading">
+                        <span class="section-index">02 / Agenda completa</span>
+                        <h2 class="section-title" id="titulo-eventos">Todos os <span class="highlight">eventos</span></h2>
+                    </div>
+                    <p class="results-count" id="contador-eventos" aria-live="polite"></p>
+                </div>
 
-            <div class="event-grid" id="lista-eventos"></div>
+                <nav class="filter" id="categorias" aria-label="Filtrar por categoria">
+                    <ul class="filter-list" id="lista-categorias"></ul>
+                </nav>
+
+                <div class="event-grid" id="lista-eventos"></div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="titulo-como-funciona">
+            <div class="section-inner">
+                <div class="closing-grid" data-reveal>
+                    <div>
+                        <span class="section-index">03 / Como participar</span>
+                        <h2 class="section-title" id="titulo-como-funciona">Sua próxima oportunidade começa aqui.</h2>
+                        <p>Explore a agenda, escolha o evento que combina com você e confirme sua presença em poucos passos.</p>
+                        <a class="btn-cta" href="#eventos">Explorar eventos <span data-icon="arrow"></span></a>
+                    </div>
+                    <ol class="steps">
+                        <li>Encontre o evento ideal pela busca ou pelas categorias.</li>
+                        <li>Confira data, local e vagas disponíveis.</li>
+                        <li>Faça sua inscrição e guarde o código de confirmação.</li>
+                    </ol>
+                </div>
+            </div>
         </section>
     </main>
 
