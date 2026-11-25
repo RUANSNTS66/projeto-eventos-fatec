@@ -1,9 +1,9 @@
 /*
- * Brilho deslizante na navegação do painel.
+ * Brilho deslizante na navegação (painel e site).
  *
  * Arquivo aditivo: cria um único `<li class="nav-shine">` dentro da nav e o
- * move entre os itens (Painel, Eventos, Categorias, Inscritos, Usuários).
- * Não altera links, classes de estado, IDs, eventos nem a lógica de páginas.
+ * move entre os itens. Não altera links, classes de estado, IDs, eventos nem
+ * a lógica de páginas.
  *
  * Ao trocar de página, lembra onde estava na sessão e faz o brilho viajar do
  * item anterior até o ativo. Se não houver memória, ele entra pela esquerda.
@@ -11,7 +11,7 @@
 (function navShine() {
     "use strict";
 
-    const nav = document.querySelector("body:not(.site) .header-menu .navigation");
+    const nav = document.querySelector("body .header-menu .navigation");
     if (!nav) return;
 
     const items = Array.from(nav.querySelectorAll(".item"));
@@ -22,7 +22,7 @@
     if (!activeItem) return;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const storageKey = "adminNavAtivo";
+    const storageKey = document.body.classList.contains("site") ? "siteNavAtivo" : "adminNavAtivo";
 
     const shine = document.createElement("li");
     shine.className = "nav-shine";
